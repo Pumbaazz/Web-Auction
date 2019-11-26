@@ -22,26 +22,37 @@
           font-size: 3.5rem;
         }
       }
-    
 
 	</style>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+	<!-- navbar -->
 	<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<div class="container d-flex justify-content-between">
 			<!-- home href -->
-			<div class=" navbar-dark col col-md-2">
+			<div class=" navbar-dark col">
 				<a href="#" class="navbar-brand align-items-center ">
+					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABIUlEQVRIie3XvUrDUBgG4KdanUQQdBAFxywuXoBu7m4OunkB3oJjb6FugmvBG3Aq0isQ0c3FH3QQVJQi6tBESmibnyYdbD94l5xDnnNy8kFC/grCjLT28I4PHIwCrKKGn1jqmC0LXUWrBxqlFc6Bx9iictcW7gegUZ6wjRVcDANXcIh2CjTKF450Hn0tDzyPRgYwnkZ4j7UsaIDLIdAoN1hPi+7gpQA0yit2B4FRq3wXiMZbbiaOLuG8JLA7TSxHaIA72d7cvGmHVjCNBZ3+e8BG34Mopk5whqvui/UCdpTmnMFUSTtLrPGDqxnnn+q0RK/axH5ZcBPHA8ZTw+N3xhN4Av9v+HME3p9R6bo4J/lf6BbPfcYWJX9RXuMtaXWl1i9DidfcImPxVgAAAABJRU5ErkJggg==">					
 					Home
 				</a>
 			</div>
+			<!-- category -->
+			<div class="dropdown">
+				  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	Dropdown button
+				  	</button>
+				  	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
+					    <a class="dropdown-item" href="#">Action</a>
+					    <a class="dropdown-item" href="#">Another action</a>
+					    <a class="dropdown-item" href="#">Something else here</a>
+					  </div>
+			</div>
 			<!-- search box -->
-			<div class="col col-md-8 input-group ">
-				<input type="text" class="form-control" placeholder="Search for device">
+			<div class="col input-group ">
+				<input type="text" class="form-control align-items-center" placeholder="Search for device">
 				<div class="input-group-append">
-					<button class="btn btn-secondary" type="button">
+					<button class="btn btn-outline-success" type="submit">
 						<i class="fa fa-search">
 							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABDElEQVQ4jbXUsS8EQRzF8c/tIZfQUVCIINdIaPCfiEYncbSiEM3VIqKlQkNNtAQVxYVCoqLSKLRqirmNSG73ZmW9cvLm+375zctQsioZ53UsYQ6DeMcNTvBRJKCKHVxjAcPoxRhW0cJykWlPsZnjqbWn3IgBNrAb4evBJWbzTAke0R+TjGmcZYG001r4jAQ+YURYQUdgHc+RsFSvGM0CfsmuUJaSTndS4AumCgIn8JaX9oCBSNgMzruZVrAXAUtrM9/NWBFKu5XjqQnlv/OzrlxVsY1bLArV6MM41oS1XAmPeBQLhUk0cYF7ocTrwkeR4Pgv0DxVcPAf0P2yoQkO29BmGcAU2sRQWcBf+gbIPy2kTEVxPQAAAABJRU5ErkJggg==">
 						</i>
@@ -49,13 +60,13 @@
 				</div>
 			</div>
 			<!-- Login button -->
-			<div class="col col-md-2" >
-				<button class="btn btn-outline-light " type="button" href = "Login.html">	Login
-				</button>
-			</div>
-
+			<form action="./signin.html" >
+    				<input class="btn btn-secondary" type="submit" value="Login" />
+			</form>
 		</div>
 	</div>
+
+
 
 </body>
 </html>
