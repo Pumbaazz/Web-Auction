@@ -35,6 +35,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="./js/FlipClock-master/compiled/flipclock.js"></script>
 </head>
 <body>
 	<!-- navbar -->
@@ -157,6 +158,37 @@
 				<div class="col-sm-4 ">
 					<img class="card-img-top" src="./img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
 					<div class="card-body">
+							<script> <p id="demo"></p>
+								// Set the date we're counting down to
+								var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+								
+								// Update the count down every 1 second
+								var x = setInterval(function() {
+								
+								  // Get today's date and time
+								  var now = new Date().getTime();
+								
+								  // Find the distance between now and the count down date
+								  var distance = countDownDate - now;
+								
+								  // Time calculations for days, hours, minutes and seconds
+								  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+								  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+								  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+								  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+								
+								  // Display the result in the element with id="demo"
+								  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+								  + minutes + "m " + seconds + "s ";
+								
+								  // If the count down is finished, write some text
+								  if (distance < 0) {
+									clearInterval(x);
+									document.getElementById("demo").innerHTML = "EXPIRED";
+								  }
+								}, 1000);
+								</script>
+								<p id="demo" ></p>
 						<h5 class="card-title">Card title</h5>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 						<div class="text-center">
@@ -168,5 +200,20 @@
 			</div>	
 	</span>
 
+
+	<!-- page navigation -->
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-end">
+			<li class="page-item disabled">
+				<a class="page-link" href="#" tabindex="-1">Previous</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#">Next</a>
+			</li>
+		</ul>
+	</nav>
 </body>
 </html>
