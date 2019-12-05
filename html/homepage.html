@@ -6,7 +6,7 @@
 	<meta name = "description" content="Project 1 web">
 	<meta name="keywords" content="HTML,CSS,JavaScript" />
 	<meta name = "author" content="1753087 1753092 17530??">
-	<style type="text/css">	
+	<!-- <style type="text/css">	
       .bd-placeholder-img {
 	        font-size: 1.125rem;
 	        text-anchor: middle;
@@ -15,8 +15,7 @@
 	        -ms-user-select: none;
 	        user-select: none;
       	}
-
-      @media (min-width: 768px) {
+      	@media (min-width: 768px) {
 	        .bd-placeholder-img-lg {
 	          font-size: 3.5rem;
 	        }
@@ -24,10 +23,7 @@
       	#homeIco{
       		background: white;
       	}
-      	
-
-	</style>
-	
+	</style> -->
 	<!-- <link rel="stylesheet" href="./css/bootstrap.css">
 	<script src="./js/bootstrap.js"></script>-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -36,54 +32,55 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="./js/FlipClock-master/compiled/flipclock.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-	<!-- navbar -->
-	<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<div class="container d-flex justify-content-between">
-			<!-- home href -->
-			<div class=" navbar-dark col">
-				<a href="#" class="navbar-brand align-items-center ">
-					<img  src="https://img.icons8.com/ios/30/000000/home.png">
-					Home
-				</a>
-			</div>
-			<!-- category -->
-			<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle col-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Category
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					   <a class="dropdown-item" href="#">Điện thoại di động</a>
-					   <a class="dropdown-item" href="#">Máy tính xách tay</a>
-				  </div>
-			</div>
-			<!-- search box -->
-			<div class="col input-group ">
-
-				<input type="text" class="form-control align-items-center" placeholder="Search for device">
-				<div class="input-group-append">
-					<button class="btn btn-outline-success" type="submit">
-						<i class="fa fa-search">
-							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABDElEQVQ4jbXUsS8EQRzF8c/tIZfQUVCIINdIaPCfiEYncbSiEM3VIqKlQkNNtAQVxYVCoqLSKLRqirmNSG73ZmW9cvLm+375zctQsioZ53UsYQ6DeMcNTvBRJKCKHVxjAcPoxRhW0cJykWlPsZnjqbWn3IgBNrAb4evBJWbzTAke0R+TjGmcZYG001r4jAQ+YURYQUdgHc+RsFSvGM0CfsmuUJaSTndS4AumCgIn8JaX9oCBSNgMzruZVrAXAUtrM9/NWBFKu5XjqQnlv/OzrlxVsY1bLArV6MM41oS1XAmPeBQLhUk0cYF7ocTrwkeR4Pgv0DxVcPAf0P2yoQkO29BmGcAU2sRQWcBf+gbIPy2kTEVxPQAAAABJRU5ErkJggg==">
-						</i>
-					</button>					
-				</div>
-			</div>
-			<!-- Login button -->
-			<form action="./signin.html" >
-    				<input class="btn btn-secondary" type="submit" value="Login" />
-			</form>
-			<!-- Watch-list -->
-			<div class="watch-list " style="padding: 3px;">
-				<button class="btn btn-primary">
-						<img src="https://img.icons8.com/dotty/23/000000/add-list.png"> Watch-list
-				</button>
-
+<!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Home button -->
+			<a class="navbar-brand" href="#"><img src="https://img.icons8.com/material-sharp/24/000000/home.png">Home</a>
+			<!-- Collapse -->
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<!-- dropdown menu -->
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Categories
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">Điện thoại di động</a>
+								<a class="dropdown-item" href="#">Máy tính xách tay</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- search box -->
+				<form class="form-inline my-2 my-lg-0" style="align-content: center;">
+					<input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button>
+				</form>
+					
+				<form class="form-inline navbar-nav my-2 my-lg-0" style="align-content: center;">
+					<!-- login button -->
+					<li class="nav-item active" style="padding-left:3px;">
+						<button class="btn btn-primary">Login</button>
+					</li>
+					<!-- watch list -->
+					<li class="nav-item active" style="padding-left:3px;">
+						<button class="btn btn-primary">
+							Watch List
+						</button>
+					</li>
+				</form>
 			</div>
 		</div>
-	</div>
-<!-- done the navbar -->
+	</nav>
 <!-- this is small slide show for showing products -->
 
 	<div id="carouselExampleIndicators" class="carousel slide jumbotron" data-ride="carousel" style="background-color: rgb(222, 158, 153);">
@@ -104,16 +101,16 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="d-block h-100 mx-auto" src="./img/wine-auction-inside.png" alt="First slide">
+					<img class="d-block h-100 mx-auto" src="../img/wine-auction-inside.png" alt="First slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block h-20 mx-auto" src="./img/iphone-11-pro-max-gold-select-2019.jpg" alt="Second slide">
+					<img class="d-block h-20 mx-auto" src="../img/iphone-11-pro-max-gold-select-2019.jpg" alt="Second slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block h-20 mx-auto" src="./img/iphone-11-pro-max-midnight-green-select-2019.jpg" alt="Third slide">
+					<img class="d-block h-20 mx-auto" src="../img/iphone-11-pro-max-midnight-green-select-2019.jpg" alt="Third slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block h-20 mx-auto" src="./img/iphone-11-pro-max-silver-select-2019.jpg" alt="Forth slide">
+					<img class="d-block h-20 mx-auto" src="../img/iphone-11-pro-max-silver-select-2019.jpg" alt="Forth slide">
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -131,7 +128,7 @@
 	<span  style="padding: 10%">
 			<div class="row">
 				<div class="col-sm-4">
-					<img class="card-img-top" src="./img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
+					<img class="card-img-top" src="../img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Card title</h5>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -144,7 +141,7 @@
 				</div>
 
 				<div class="col-sm-4">
-					<img class="card-img-top" src="./img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
+					<img class="card-img-top" src="../img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
 							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -156,39 +153,8 @@
 				</div>
 			
 				<div class="col-sm-4 ">
-					<img class="card-img-top" src="./img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
+					<img class="card-img-top" src="../img/hcmus.jpg" style="scale: 70%;" alt="Card image cap">
 					<div class="card-body">
-							<script> <p id="demo"></p>
-								// Set the date we're counting down to
-								var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-								
-								// Update the count down every 1 second
-								var x = setInterval(function() {
-								
-								  // Get today's date and time
-								  var now = new Date().getTime();
-								
-								  // Find the distance between now and the count down date
-								  var distance = countDownDate - now;
-								
-								  // Time calculations for days, hours, minutes and seconds
-								  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-								  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-								  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-								  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-								
-								  // Display the result in the element with id="demo"
-								  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-								  + minutes + "m " + seconds + "s ";
-								
-								  // If the count down is finished, write some text
-								  if (distance < 0) {
-									clearInterval(x);
-									document.getElementById("demo").innerHTML = "EXPIRED";
-								  }
-								}, 1000);
-								</script>
-								<p id="demo" ></p>
 						<h5 class="card-title">Card title</h5>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 						<div class="text-center">
