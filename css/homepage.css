@@ -1,0 +1,255 @@
+html, body {
+	margin: 0%;
+    box-sizing: border-box;
+}
+
+.navbar {
+	height: 6vh;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 3px solid  #DB1909;
+
+}
+
+.nav-item-1 {
+	color: #DB1909;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-left: 10rem;
+	font-size: 1.5rem;
+}
+
+.nav-item-2 {
+	color: #DB1909;
+	margin-left: -14rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+}
+
+.navbar-account {
+	justify-content: flex-end;
+	position: relative;
+	margin-right: 12rem;
+	padding: .5rem .2rem;
+
+}
+
+.navbar .navbar-account .btn-signin,.btn-signup{
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: .2rem 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-account .btn-signin{
+	color: #FF5733;
+	background: #EECDC6;
+}
+
+.navbar .navbar-account .btn-signup{
+	color:  #EECDC6;
+	background:#FF5733;
+}
+
+.navbar .navbar-account .btn-signin:hover {
+	background-color: #D1F5C1;
+	color:#EECDC6;
+}
+
+.navbar .navbar-account .btn-signup:hover {
+	background-color: #D1F5C1;
+}
+
+
+.navbar .nav-item-1:hover {
+	color: #000000;
+}
+
+.navbar .nav-item-2:hover {
+	color: #000000;
+}
+
+.navbar .searchbar input[type=text] {
+  margin-left: -15rem;
+  padding-right: 10rem;
+  padding-top: .7rem;
+  background-color: #D7DBFA;
+  border: 2px solid  #F46666;
+  border-radius: 5px;
+}
+
+.navbar .searchbar input::placeholder {
+  color: #444653;
+  font-size: 20px;
+}
+
+.navbar .searchbar .btnsearch {
+	padding-right: 1rem;
+	padding-bottom: .4rem;
+	padding-top: .1rem;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 1.7rem;
+	color: #FF5733;
+}
+
+.navbar .searchbar .btnsearch:hover{
+	color: #000000;
+}
+
+h2 {
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 15rem;
+	font-size: 2rem;
+	color:  #D61808;
+	text-transform: uppercase;
+}
+
+.container .container1{
+	margin-top: 10rem;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 4rem;
+	background:  #D9DBE1;
+
+}
+
+.container .container1 .item-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: .2rem .1rem;
+	list-style: none;
+}
+
+.card {
+	border: 3px solid transparent;
+	width: 18rem;
+	height: 22rem;
+}
+
+.img-item{
+	width: 15rem;
+	height: 16rem;
+}
+
+.card-content {
+	text-align:center;
+}
+
+.navbar .submenu, .navbar .sub-submenu{
+	position: absolute;
+	display: none;
+}
+
+.navbar .submenu{
+	margin-left: -0.5rem;
+	list-style: none;
+	border-radius: .6rem;
+}
+
+.navbar .submenu li {
+	margin-left: -16rem;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid transparent;
+	margin-right: 7rem;
+	background-color: #D7DBFA;
+	text-align: center;
+}
+
+.navbar .submenu a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	color: #F55244;
+	padding: 2rem 1rem;
+}
+
+.navbar .submenu a:hover{
+	background-color: #D1F5C1;
+	cursor: pointer;
+}
+
+.navbar .sub-submenu {
+	margin-left: 22.4rem;
+}
+
+.navbar > li:hover .submenu, .submenu > li:hover > .sub-submenu{
+	display: block;
+}
+
+.navbar .arrow {
+	display: inline-block;
+	border: 5px solid #000000;
+	width: 8px;
+	height: 8px;
+	border-left: none;
+	border-bottom: none;
+	position: relative;
+	right: 0;
+	margin-left: 10px;
+}
+
+.navbar .nav-item-2 .arrow.arrowdown {
+	transform: rotateZ(135deg) translate(0px, 3px);
+}
+
+.navbar .arrow.arrowright {
+	transform: rotateZ(45deg);
+}
+
+footer.footer{
+    height: 100%;
+    background: #766BEC;
+    position: relative;
+}
+
+footer.footer .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+footer.footer .container > div{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 3rem .9rem;
+}
+
+footer.footer .container h2{
+    color: #ffffff;
+}
+
+footer.footer .newsletter .form-element{
+    background: black;
+    display: inline-block;
+}
+
+footer.footer .newsletter .form-element input{
+    padding: .5rem .7rem;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    width: 74%;
+}
+
+footer.footer .newsletter .form-element span{
+    background: #766BEC;
+    padding: .5rem .7rem;
+    cursor: pointer;
+}
+
+footer.footer .rights{
+    justify-content: center;
+}
+
+footer.footer .rights h4 a{
+    color: #ffffff;
+}
