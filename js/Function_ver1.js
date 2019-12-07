@@ -17,6 +17,7 @@ function UpdateValue()
     var PreValue = GetAuctionValue();
     Convert_PreValue = parseFloat(PreValue);
     var LatestValue = Convert_PreValue + 250000;
-    document.getElementById('Auction_value_2').textContent = LatestValue.textContent;
+    var convet = LatestValue.toString();
+    document.getElementById('Auction_value_2').textContent = convet;
 }
 document.getElementById('Btn_Auction').addEventListener('click',UpdateValue)
