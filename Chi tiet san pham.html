@@ -27,7 +27,6 @@
       	
 
 	</style>
-	
 	<!-- <link rel="stylesheet" href="./css/bootstrap.css">
 	<script src="./js/bootstrap.js"></script>-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -92,7 +91,7 @@
             </div>
             <div class="col">
                 <h4 class="Product-information">IPHONE 11 PRO MAX GOLD 2019</h4>
-                <h5> Thương hiệu: <small style="color: indianred;">APPLE</small></h5>
+                <h5> Thương hiệu: <small style="color: red;">APPLE</small></h5>
                 <div class="Product-information-detail">
                     <br>
                     <ul>
@@ -108,11 +107,20 @@
                         <li>Tính năng: chống nước, chống bụi, FACE ID, sạc pin nhanh</li>
                     </ul>
                     <br>
-                    <h5>Giá gốc: <small style="color: red; font-size: 20px;">43.990.000 VND</small></h5>
+					<h5>Giá gốc: <small id="Original_valueProduct" style="color:cadetblue; font-size: 20px;">43909000</small>
+						<span style="color: cadetblue; font-size: 20px;">VND</span></h5>
+					
+					<h5 id="Auction_value_1">Giá hiện tại: <small id="Auction_value_2"></small> <small style="font-size: 20px; color: red;">VND</small></h5>
+						
+					<button type="button" style="background-color:lightsalmon ;" id="Btn_Auction">Đấu giá</button>
+
                 </div>
             </div>
   
         </div>
-       
-    </div>
+	   
+	<script type="text/JavaScript" src="js/Function_ver1.js" ></script>
+	</div>
+	
 </body>
+</html>
