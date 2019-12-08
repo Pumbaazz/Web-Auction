@@ -2,10 +2,21 @@
 
 
 //Luu tru gia tri goc cua san pham
+
 if(typeof(Storage) !== 'undefined')
 {
-    sessionStorage.setItem('IP11_OriginalValue', '43909000');
-    sessionStorage.setItem('IP11_AuctionValue', sessionStorage.getItem('IP11_OriginalValue'));
+    localStorage.setItem('IP11_OriginalValue', '43909000');
+    if(document.readyState == 'complete')
+    {
+        localStorage.setItem('IP11_AuctionValue', localStorage.getItem('IP11_OriginalValue'));
+    }
+    else
+    {
+        localStorage.setItem('IP11_AuctionValue_2', localStorage.getItem('IP11_AuctionValue'));
+        localStorage.removeItem('IP11_AuctionValue');
+        localStorage.setItem('IP11_AuctionValue', localStorage.getItem('IP11_AuctionValue_2'));
+        localStorage.removeItem('IP11_AuctionValue_2');
+    }
 }
 else
 {
@@ -28,7 +39,7 @@ function Display_AucValue_First()
 //     else
 //         document.getElementById('Auction_value_2').textContent = Latest_Money;
 
-    document.getElementById('Auction_value_2').textContent = sessionStorage.getItem('IP11_AuctionValue');
+    document.getElementById('Auction_value_2').textContent = localStorage.getItem('IP11_AuctionValue');
     document.getElementById('Auction_value_2').style.color = "#FF0000";
     document.getElementById('Auction_value_2').style.fontSize = "20px";
 }
@@ -44,26 +55,24 @@ function GetAuctionValue()
 
 //Ham nay dung de update gia tri dau gia khi co nguoi click vao
 function UpdateValue()
-{   
-    if(typeof(Storage) !== "undefined") 
+{   var result = confirm("Xác nhận tham gia đấu giá?")
+    if(result)
     {
-        if (sessionStorage.clickcount) {
-            sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
-        } 
-        else {
-            sessionStorage.clickcount = 1;
+       var PreValue = GetAuctionValue();
+        var LatestValue = parseFloat(PreValue);
+        LatestValue = LatestValue + 250000;
+        var convet = LatestValue.toString();
+        if(typeof(Storage) !== 'undefined')
+        {
+            localStorage.removeItem('IP11_AuctionValue');
+            localStorage.setItem('IP11_AuctionValue',convet);
         }
+        
+        document.getElementById('Auction_value_2').textContent = convet; 
     }
-    var PreValue = GetAuctionValue();
-    var LatestValue = parseFloat(PreValue);
-    LatestValue = LatestValue + 250000;
-    var convet = LatestValue.toString();
-    if(typeof(Storage) !== 'undefined')
-    {
-        sessionStorage.removeItem('IP11_AuctionValue');
-        sessionStorage.setItem('IP11_AuctionValue',convet);
+    else{
+        alert("Chúc bạn mua sắm vui vẻ");
     }
     
-    document.getElementById('Auction_value_2').textContent = convet;
 }
 //document.getElementById('Btn_Auction').addEventListener('click',UpdateValue)
