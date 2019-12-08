@@ -51,7 +51,7 @@
 						<!-- dropdown menu -->
 						<div class="dropdown">
 							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Categories
+									Categories
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 								<a class="dropdown-item" href="#">Điện thoại di động</a>
@@ -66,16 +66,22 @@
 					<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button>
 				</form>
 					
-				<form class="form-inline navbar-nav my-2 my-lg-0" style="align-content: center;">
+				<form class="form-inline navbar-nav my-2 my-lg-0" style="align-content: center; padding-left: 3px;">
 					<!-- login button -->
-					<li class="nav-item active" style="padding-left:3px;">
-						<button class="btn btn-primary">Login</button>
-					</li>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Sign-in or sign-up
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item btn btn-secondary" href="./sign_up.html" style="text-decoration: none; "><img src="https://img.icons8.com/metro/18/000000/add-user-male.png" style="text-align: center; padding-right: 0.5rem;">Sign-up</a>
+								<a class="dropdown-item btn btn-secondary" href="./signin.html" style="text-decoration: none; "><img src="https://img.icons8.com/metro/18/000000/login-rounded-right.png" style="text-align: center; padding-right: 0.5rem;">Login</a>
+						</div>
+					</div>
 					<!-- watch list -->
 					<li class="nav-item active" style="padding-left:3px;">
-						<button class="btn btn-primary">
-							Watch List
-						</button>
+						<a class="btn btn-secondary" href="./watch_list.html">	
+								Watch List
+						</a>
 					</li>
 				</form>
 			</div>
