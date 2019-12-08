@@ -1,7 +1,7 @@
 //Day la ham dem nguoc thoi gian dau gia cua san pham
 
 //Set thoi gian dem nguoc
-var CountDownDate = new Date("Dec 8, 2019 22:39:00").getTime();
+var CountDownDate = new Date("Dec 20, 2019 22:30:00").getTime();
 
 var curTime = setInterval(function()
 {
