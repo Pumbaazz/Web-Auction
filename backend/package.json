@@ -1,0 +1,24 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/Pumbaazz/Web/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pumbaazz/Web.git"
+  },
+  "author": "kien_nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pumbaazz/Web/issues"
+  },
+  "homepage": "https://github.com/Pumbaazz/Web#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
