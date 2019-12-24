@@ -37,51 +37,57 @@
 	<script src="./js/FlipClock-master/compiled/flipclock.js"></script>
 </head>
 <body>
-	<!-- navbar -->
-	<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<div class="container d-flex justify-content-between">
-			<!-- home href -->
-			<div class=" navbar-dark col">
-				<a href="#" class="navbar-brand align-items-center ">
-					<img  src="https://img.icons8.com/ios/30/000000/home.png">
-					Home
-				</a>
-			</div>
-			<!-- category -->
-			<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle col-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Category
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					   <a class="dropdown-item" href="#">Điện thoại di động</a>
-					   <a class="dropdown-item" href="#">Máy tính xách tay</a>
-				  </div>
-			</div>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Home button -->
+		<a class="navbar-brand" href="./homepage.html"><img src="https://img.icons8.com/material-sharp/24/000000/home.png">Home</a>
+		<!-- Collapse -->
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<!-- dropdown menu -->
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Categories
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">Điện thoại di động</a>
+							<a class="dropdown-item" href="#">Máy tính xách tay</a>
+						</div>
+					</div>
+				</li>
+			</ul>
 			<!-- search box -->
-			<div class="col input-group ">
-
-				<input type="text" class="form-control align-items-center" placeholder="Search for device">
-				<div class="input-group-append">
-					<button class="btn btn-outline-success" type="submit">
-						<i class="fa fa-search">
-							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABDElEQVQ4jbXUsS8EQRzF8c/tIZfQUVCIINdIaPCfiEYncbSiEM3VIqKlQkNNtAQVxYVCoqLSKLRqirmNSG73ZmW9cvLm+375zctQsioZ53UsYQ6DeMcNTvBRJKCKHVxjAcPoxRhW0cJykWlPsZnjqbWn3IgBNrAb4evBJWbzTAke0R+TjGmcZYG001r4jAQ+YURYQUdgHc+RsFSvGM0CfsmuUJaSTndS4AumCgIn8JaX9oCBSNgMzruZVrAXAUtrM9/NWBFKu5XjqQnlv/OzrlxVsY1bLArV6MM41oS1XAmPeBQLhUk0cYF7ocTrwkeR4Pgv0DxVcPAf0P2yoQkO29BmGcAU2sRQWcBf+gbIPy2kTEVxPQAAAABJRU5ErkJggg==">
-						</i>
-					</button>					
-				</div>
-			</div>
-			<!-- Login button -->
-			<form action="./signin.html" >
-    				<input class="btn btn-secondary" type="submit" value="Login" />
+			<form class="form-inline my-2 my-lg-0" style="align-content: center;">
+				<input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button>
 			</form>
-			<!-- Watch-list -->
-			<div class="watch-list " style="padding: 3px;">
-				<button class="btn btn-primary">
-						<img src="https://img.icons8.com/dotty/23/000000/add-list.png"> Watch-list
-				</button>
-
-			</div>
+				
+			<form class="form-inline navbar-nav my-2 my-lg-0" style="align-content: center; padding-left: 3px;">
+				<!-- login button -->
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Sign-in or sign-up
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item btn btn-secondary" href="./sign_up.html" style="text-decoration: none; "><img src="https://img.icons8.com/metro/18/000000/add-user-male.png" style="text-align: center; padding-right: 0.5rem;">Sign-up</a>
+							<a class="dropdown-item btn btn-secondary" href="./signin.html" style="text-decoration: none; "><img src="https://img.icons8.com/metro/18/000000/login-rounded-right.png" style="text-align: center; padding-right: 0.5rem;">Login</a>
+					</div>
+				</div>
+				<!-- watch list -->
+				<li class="nav-item active" style="padding-left:3px;">
+					<a class="btn btn-secondary" href="./watch_list.html">	
+							Watch List
+					</a>
+				</li>
+			</form>
 		</div>
 	</div>
+</nav>
 <!-- done the navbar -->
 
     <div class="container"; style="padding-top: 100px;">
