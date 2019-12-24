@@ -2,15 +2,20 @@
     <div class="card-header">
         <h4>Categories</h4>
     </div>
-    <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
+    {{#if this.empty}}
+    <div class="card-body">
+      <h4 class="card-text">Khong co du lieu.</h4>
+    </div>
+    {{else}}
+     <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Category</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
     {{#each this.categories}}
     <tr>
       <th scope="row">{{CatID}}</th>
@@ -26,5 +31,8 @@
     </tr>
     {{/each}} 
   </tbody>
-</table>
+    </table>
+    {{/if}}
+    
+   
 </div>
