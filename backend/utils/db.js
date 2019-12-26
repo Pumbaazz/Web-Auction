@@ -1,5 +1,8 @@
 const mysql = require('mysql');
-const connection = mysql.createConnection({
+const util = require('util');
+
+const pool = mysql.createPool({
+    connectionLimit: 100,
     host: 'localhost',
     port: 8889,
     user: 'root',
@@ -7,30 +10,23 @@ const connection = mysql.createConnection({
     database: 'qlbh'
 });
 
+const pool_query = util.promisify(pool.query).bind(pool);
+
+
 
 module.exports = {
-    load: sql => {
-        return new Promise (
-            function(done, fail) {
-                connection.connect();
-                connection.query(sql, function(error, result, fields) {
-                    if (error) fail(error);
-                    else done(result);
-                    fn_done(result);
-                    connection.end();
-                });
-            }
+    load: sql => pool_query(sql),
+    // load: sql => {
+    //     return new Promise (
+    //         function(done, fail) {
+    //             pool.query(sql, function(error, result, fields) {
+    //                 if (error) fail(error);
+    //                 else done(result);
+                   
+    //                 connection.end();
+    //             });
+    //         }
 
-        );
-    }
-
-
-    // load: (sql, fn_done) => {
-    //     connection.connect();
-    //     connection.query(sql, function(error, result, fields) {
-    //         if(error) throw error;
-    //         fn_done(result);
-    //         connection.end();
-    //     });
+    //     );
     // }
 }
