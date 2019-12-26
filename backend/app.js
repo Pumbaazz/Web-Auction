@@ -25,6 +25,19 @@ app.get('/homepage', function(req, res){
 })
 
 
+app.get('/admin/categories', function(req, res){
+    const list = [
+        {CatID: 1, CatName: 'Laptop'},
+        {CatID: 2, CatName: 'Điện thoại'},
+        {CatID: 3, CatName: 'Tablet'},
+        {CatID: 4, CatName: 'Jewelry'},
+        {CatID: 5, CatName: 'Ahihi'},
+    ]
+    res.render('vwCategories/index', {
+        categories : list,
+        empty: list.length ===0
+    });
+});
 app.use('/admin/categories', require('./routes/category.route'));
 app.use('/admin/products', require('./routes/product.route'));
 
