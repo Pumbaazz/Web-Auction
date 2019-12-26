@@ -20,6 +20,10 @@
   "keywords": [],
   "dependencies": {
     "express": "^4.17.1",
+<<<<<<< HEAD
+    "express-handlebars": "^3.1.0"
+=======
     "mysql": "^2.17.1"
+>>>>>>> 6ff47583c4d32a623938ec3bc3d2e0e851ce42eb
   }
 }
