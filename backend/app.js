@@ -26,7 +26,7 @@ app.get('/homepage', function(req, res){
 
 
 app.use('/admin/categories', require('./routes/category.route'));
-
+app.use('/admin/products', require('./routes/product.route'));
 
 const PORT = 3000;
 app.listen(PORT, function(){
