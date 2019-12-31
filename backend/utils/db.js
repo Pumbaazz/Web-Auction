@@ -16,18 +16,7 @@ const pool_query = util.promisify(pool.query).bind(pool);
 
 module.exports = {
     load: sql => pool_query(sql),
-    add: (entity, table) = pool_query('insert into ? set ?', [table, entity])
-    // load: sql => {
-    //     return new Promise (
-    //         function(done, fail) {
-    //             pool.query(sql, function(error, result, fields) {
-    //                 if (error) fail(error);
-    //                 else done(result);
-                   
-    //                 connection.end();
-    //             });
-    //         }
-
-    //     );
-    // }
+    add: (entity, table) => pool_query(`insert into ${table} set ?`, entity),
+    del: (condition, table) => pool_query(`delete from ${table} where ?`, condition),
+    patch: (entity, condition, table) => pool_query(`update ${table} set ? where ?`, [entity, condition]),
 }

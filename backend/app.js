@@ -48,6 +48,12 @@ app.get('/admin/categories', function(req, res){
 
 app.use('/admin/categories', require('./routes/category.route'));
 app.use('/admin/products', require('./routes/product.route'));
+
+app.get('/err', function(req, res){
+    throw new Error('beng beng');
+})
+
+
 app.use(function(req, res){
     res.render('404', {
         layout: false
@@ -55,6 +61,11 @@ app.use(function(req, res){
 
 })
 
+app.use(function(err, req, res, next){
+    console.log(err);
+    res.send('error');
+
+})
 
 const PORT = 3000;
 app.listen(PORT, function(){
