@@ -1,6 +1,15 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header d-flex">
+      <div class="w-50">
         <h4>Categories</h4>
+      </div>
+      <div class="w-50">
+        <a class="btn btn-outline-success float-right" href="/admin/categories/add" role="button">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add Category
+        </a>
+      </div>
+        
     </div>
     {{#if this.empty}}
     <div class="card-body">
