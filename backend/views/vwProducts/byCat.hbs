@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Products</h4>
+    </div>
+    {{#if this.empty}}
+    <div class="card-body">
+      <h4 class="card-text">Khong co du lieu.</h4>
+    </div>
+    {{else}}
+    <div class="card-body">    
+        <div class="row">
+            {{#each this.products}}
+            <div class="col-sm-4 mb-3">
+                <div class="card h-100">
+                    <img src="/img/iphone-11-pro-max-gold-select-2019.jpg" alt="{{ProName}}" title="{{ProName}}" class="card-img-top">               
+                    <div class="card-body">
+                        <h6 class="card-title">{{ProName}}</h6>
+                        <h4 class="card-title text-danger">{{format Price}}</h4>
+                        <p class="card-text">{{TinyDes}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-outline-primary" href="javascript:;" role="button">
+                            <i class="fa fa-eye" aria-hidden="true"></i>Details
+                        </a>
+                        <a class="btn btn-outline-success" href="javascript:;" role="button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>Add to cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             {{/each}}
+        </div>    
+    </div>
+    {{/if}}
+    
+   
+</div>
