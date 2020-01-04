@@ -2,6 +2,10 @@ const db = require('../utils/db')
 
 module.exports = {
     all : _ => db.load('select * from categories'),
+    allWithDetails: _ => {
+        const sql = ``;
+        return db.load();
+    },
     single: async id => {
         const sql = `select * from categories where CatID = ${id}`;
         const rows = await db.load(sql);

@@ -22,6 +22,17 @@ app.set('view engine', 'hbs');
 app.use('/public', express.static('public'));
 
 
+const categoryModel = require('./models/category.model');
+
+app.use(async function(req, res, next){
+    const rows = await categoryModel.allWithDetails();
+    res.locals.lcCategories = rows;
+
+    next();
+
+})
+
+
 app.get('/', function(req, res){
     res.render("home");
 })
@@ -57,6 +68,7 @@ app.use('/admin/products', require('./routes/product.route'));
 
 
 app.use('/products', require('./routes/_product.route'));
+
 app.get('/err', function(req, res){
     throw new Error('beng beng');
 })
