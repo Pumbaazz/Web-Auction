@@ -1,6 +1,6 @@
 const express = require('express');
 const productModel = require('../models/product.model');
-
+const config = require('../config/default.json');
 const router = express.Router();
 
 router.get('/byCat/:catId', async function(req, res) {
@@ -9,11 +9,45 @@ router.get('/byCat/:catId', async function(req, res) {
             c.isActive = true;
         }
     }
-    const rows = await productModel.allByCat(req.params.catId);
+
+    const page = +req.query.page || 1;
+    if (page < 0) page = 1;
+    const offset = (page - 1) * config.pagination.limit;
+
+    // const total =  await productModel.countByCat(req.params.catId);
+    // const rows =  await productModel.pageByCat(req.params.catId, offset);
+    const [total, rows] = await Promise.all([
+        productModel.countByCat(req.params.catId),
+        productModel.pageByCat(req.params.catId, offset)
+
+    ])
+
+    let nPages = Math.ceil(total / config.pagination.limit);
+    const page_items = [];
+    for (i = 1; i <= nPages; i++){
+        const item = {
+            value: i,
+            isActive: i === page
+        }
+        page_items.push(item);
+    }
+
+    //const rows = await productModel.pageByCat(req.params.catId, offset);
     res.render(`vwProducts/byCat`, {
         products: rows,
-        empty: rows.length === 0
+        empty: rows.length === 0,
+        page_items,
+        can_go_prev: page > 1,
+        can_go_next: page < nPages,
+        next_value: page + 1,
+        prev_value = page - 1,
     })
+ 
+    // const rows = await productModel.allByCat(req.params.catId);
+    // res.render(`vwProducts/byCat`, {
+    //     products: rows,
+    //     empty: rows.length === 0
+    // })
 })
 
 module.exports = router;
