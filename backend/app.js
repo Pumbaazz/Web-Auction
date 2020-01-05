@@ -1,7 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const numeral = require('numeral');
-
+const hbs_sections = require('express-handlebars-sections');
 require('express-async-errors');
 const app = express();
 
@@ -13,6 +13,7 @@ app.use(express.urlencoded({
 app.engine('hbs', exphbs({
     defaultLayout:'main.hbs',
     helpers: {
+        section: hbs_sections(),
         format: val => numeral(val).format('0,0')
     }
 }));
@@ -27,7 +28,6 @@ const categoryModel = require('./models/category.model');
 app.use(async function(req, res, next){
     const rows = await categoryModel.allWithDetails();
     res.locals.lcCategories = rows;
-
     next();
 
 })
@@ -66,7 +66,7 @@ app.get('/admin/categories', function(req, res){
 app.use('/admin/categories', require('./routes/category.route'));
 app.use('/admin/products', require('./routes/product.route'));
 
-
+app.use('/account', require('./routes/_account.route'));
 app.use('/products', require('./routes/_product.route'));
 
 app.get('/err', function(req, res){
