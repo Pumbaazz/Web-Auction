@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const userModel = require('../models/user.model');
 const config = require('../config/default.json')
 
+const router = express.Router()
+
 router.get('/register', async function(req, res) {
    res.render('vwAccount/register');
 })

@@ -40,7 +40,7 @@ router.get('/byCat/:catId', async function(req, res) {
         can_go_prev: page > 1,
         can_go_next: page < nPages,
         next_value: page + 1,
-        prev_value = page - 1,
+        //prev_value = page - 1,
     })
  
     // const rows = await productModel.allByCat(req.params.catId);
