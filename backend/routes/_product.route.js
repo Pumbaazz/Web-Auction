@@ -50,4 +50,12 @@ router.get('/byCat/:catId', async function(req, res) {
     // })
 })
 
+
+router.get('/:id', async function(req, res) {
+    const rows = await productModel.single(req.params.id);
+    res.render(`vwProducts/detail`, {
+        product: rows[0]
+    })
+})
+
 module.exports = router;

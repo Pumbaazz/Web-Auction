@@ -6,9 +6,51 @@ const config = require('../config/default.json')
 
 const router = express.Router()
 
+router.post('/login', async function(req, res) {
+   res.render('vwAccount/login', {
+      layout:false
+   }); 
+})
+
+router.post('/login', async function(req, res) {
+   const user = await userModel.singleByUserName(req.body.username);
+   if(user === null) {
+      return res.render('vwAccount/login', {
+         layout: false,
+         err_message = 'Invalid username or password'
+      });    
+   }
+   const rs = bcrypt.compareSync(req.body.password, user.password_hash);
+   if(res === false) {
+      return res.render('vwAccount/login', {
+         layout: false,
+         err_message = 'Invalid username or password'
+      })
+   }
+   delete user.password_hash;
+   req.session.isAuthenticated = true;
+   req.session.authUser = user;
+
+   const url = req.query.retUrl || '/';
+   res.redirect(url);
+})
+
+router.post('/logout', async function(req, res) {
+   req.session.isAuthenticated = false;
+   req.session.authUser = null;
+   res.redirect(req.headers.referer);
+})
+
+
+const restrict = require('../middlewares/auth.mdw')
+router.get('/profile', restrict, async function(req, res) {
+   res.render('vwAccount/profile');
+})
+
 router.get('/register', async function(req, res) {
    res.render('vwAccount/register');
 })
+
 
 
 router.post('/register', async function(req, res) {
