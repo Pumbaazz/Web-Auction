@@ -10,14 +10,18 @@ app.use(express.urlencoded({
 }));
 
 
-app.engine('hbs', exphbs({
-    defaultLayout:'main.hbs',
-    helpers: {
+
+module.exports = function (app) {
+    app.engine('hbs', exphbs({
+      defaultLayout: 'main.hbs',
+      helpers: {
         section: hbs_sections(),
         format: val => numeral(val).format('0,0')
-    }
-}));
-
+      }
+    }));
+    app.set('view engine', 'hbs');
+  };
+  
 app.set('view engine', 'hbs');
 
 app.use('/public', express.static('public'));
@@ -49,19 +53,19 @@ app.get('/homepage', function(req, res){
 })
 
 
-app.get('/admin/categories', function(req, res){
-    const list = [
-        {CatID: 1, CatName: 'Laptop'},
-        {CatID: 2, CatName: 'Smartphone'},
-        {CatID: 3, CatName: 'Tablet'},
-        {CatID: 4, CatName: 'Jewelry'},
-        {CatID: 5, CatName: 'Clothes'},
-    ]
-    res.render('vwCategories/index', {
-        categories : list,
-        empty: list.length ===0
-    });
-});
+// app.get('/admin/categories', function(req, res){
+//     const list = [
+//         {CatID: 1, CatName: 'Laptop'},
+//         {CatID: 2, CatName: 'Smartphone'},
+//         {CatID: 3, CatName: 'Tabl et'},
+//         {CatID: 4, CatName: 'Jewelry'},
+//         {CatID: 5, CatName: 'Clothes'},
+//     ]
+//     res.render('vwCategories/index', {
+//         categories : list,
+//         empty: list.length ===0
+//     });
+// });
 
 app.use('/admin/categories', require('./routes/category.route'));
 app.use('/admin/products', require('./routes/product.route'));
