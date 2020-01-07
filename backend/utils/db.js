@@ -4,15 +4,13 @@ const util = require('util');
 const pool = mysql.createPool({
     connectionLimit: 100,
     host: 'localhost',
-    port: 8889,
+    port: 3306,
     user: 'root',
     password: 'root',
     database: 'qlbh'
 });
 
 const pool_query = util.promisify(pool.query).bind(pool);
-
-
 
 module.exports = {
     load: sql => pool_query(sql),
