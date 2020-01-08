@@ -1,7 +1,7 @@
 const db = require('../utils/db')
 
 module.exports = {
-    all : _ => db.load('select * from user_clc'),
+    all : _ => db.load('select * from users'),
     add : entity => db.add(entity, 'users'),
 
     singleByUserName: async username => {

@@ -13,9 +13,8 @@ router.get('/byCat/:catId', async function(req, res) {
     const page = +req.query.page || 1;
     if (page < 0) page = 1;
     const offset = (page - 1) * config.pagination.limit;
+    //const total =  await productModel.countByCat(req.params.catId);
 
-    // const total =  await productModel.countByCat(req.params.catId);
-    // const rows =  await productModel.pageByCat(req.params.catId, offset);
     const [total, rows] = await Promise.all([
         productModel.countByCat(req.params.catId),
         productModel.pageByCat(req.params.catId, offset)
@@ -40,15 +39,9 @@ router.get('/byCat/:catId', async function(req, res) {
         can_go_prev: page > 1,
         can_go_next: page < nPages,
         next_value: page + 1,
-        //prev_value = page - 1,
+        prev_value: page - 1,
     })
- 
-    // const rows = await productModel.allByCat(req.params.catId);
-    // res.render(`vwProducts/byCat`, {
-    //     products: rows,
-    //     empty: rows.length === 0
-    // })
-})
+ })
 
 
 router.get('/:id', async function(req, res) {

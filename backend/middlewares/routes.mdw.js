@@ -3,19 +3,24 @@ module.exports = function(app) {
         res.render('home');
     })
     
-    
-    app.get('/about', function(req, res){
-        res.render('about');
+    app.get('/bs', function(req, res){
+        res.render('bs');
     })
-    
-    
-    var path = require('path');
+
     app.get('/homepage', function(req, res){
         res.render('homepage', {layout: true});
     })
+
+    app.use('/admin/categories', require('../routes/category.route'));
+    app.use('/admin/products', require('../routes/product.route'));
+    app.use('/account', require('../routes/_account.route'));
+    app.use('/products', require('../routes/_product.route'));
+    app.use('/demo', require('../routes/_demo.route'));
+
+    //var path = require('path');
     
     
-    app.get('/admin/categories', function(req, res){
+    /*app.get('/admin/categories', function(req, res){
         const list = [
             {CatID: 1, CatName: 'Laptop'},
             {CatID: 2, CatName: 'Smartphone'},
@@ -27,12 +32,6 @@ module.exports = function(app) {
             categories : list,
             empty: list.length ===0
         });
-    });
+    });*/
     
-    app.use('/admin/categories', require('../routes/category.route'));
-    app.use('/admin/products', require('../routes/product.route'));
-    
-    app.use('/account', require('../routes/_account.route'));
-    app.use('/products', require('../routes/_product.route'));
-    app.use('/demo', require('../routes/_demo.route'));
-}
+};
