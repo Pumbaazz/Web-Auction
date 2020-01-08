@@ -17,14 +17,14 @@ router.post('/login', async function(req, res) {
    if(user === null) {
       return res.render('vwAccount/login', {
          layout: false,
-         err_message = 'Invalid username or password'
+         err_message : 'Invalid username or password'
       });    
    }
    const rs = bcrypt.compareSync(req.body.password, user.password_hash);
    if(res === false) {
       return res.render('vwAccount/login', {
          layout: false,
-         err_message = 'Invalid username or password'
+         err_message : 'Invalid username or password'
       })
    }
    delete user.password_hash;
@@ -70,7 +70,8 @@ router.post('/register', async function(req, res) {
 
  router.get('/is-available', async function(req, res) {
     const user = await userModel.singleByUserName(req.body.user);
-    if(!user) return res.json(true);
+    if(!user) 
+      return res.json(true);
     res.json(false);
  })
 
