@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', async function(req, res){
     const results = await categoryModel.all();
     res.render('vwCategories/index', {
-        products: results,
+        categories: results,
         empty: results.length === 0
     });
 });
